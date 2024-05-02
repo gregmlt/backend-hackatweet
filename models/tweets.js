@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 const tweetSchema = mongoose.Schema({
-  text: String,
-  password: String,
+  content: {
+    type: String,
+    maxlength: 280, // Limiter à 280 caractères
+  },
   like: [
     {
       type: mongoose.Schema.Types.ObjectId,
